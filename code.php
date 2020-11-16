@@ -2,10 +2,9 @@
 /* ------------------------ _____search_by_title_only */
 if ( ! function_exists('_____search_by_title_only') ) {
 
-  $post_type = array('product');
-
-	function _____product_search_by_title_only($where) {
+	function _____search_by_title_only($where) {
 		global $wpdb, $typenow, $pagenow;
+		$post_type = array( 'product' );
 		if ( ! is_admin() ) {
 			return $where;
 		}
@@ -18,5 +17,5 @@ if ( ! function_exists('_____search_by_title_only') ) {
 		}
 	}
 
-	add_filter('posts_search', '_____product_search_by_title_only', 500, 1);
+	add_filter('posts_search', '_____search_by_title_only', 500, 1);
 }
